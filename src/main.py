@@ -26,7 +26,7 @@ def print_hi(name):
 
 def readParameter():
     print("Begin!!!!!!!!")
-    path = "C:\\Users\\darian\\PycharmProjects\\GANet\\Parameters\\"
+    path = "../data/Parameters/"
     for file in os.listdir(path):
         # Check whether file is in text format or not
         if file.endswith(".txt"):
@@ -70,7 +70,7 @@ def run(Gi, parameters, file_path):
     # iterate from parameters
     iterationSize, populationSize, crossoverPc, mutationPm = parameters
 
-    pathResult = "C:\\Users\\darian\\PycharmProjects\\GANet\\Communities\\"
+    pathResult = "../output/Communities/"
 
     if file_path.__contains__('.paj'):
         pathResult = pathResult + file_path.replace('.paj', '')
@@ -100,7 +100,7 @@ def run(Gi, parameters, file_path):
 
     
     for c, p in results:
-        fileName = open(pathResult + "\\" + p, 'w')
+        fileName = open(pathResult + "/" + p, 'w')
         for ci in c:
             ci.sort()
             ci = str(ci).replace(',', '').replace('[', '').replace(']', '')
@@ -116,7 +116,7 @@ def run(Gi, parameters, file_path):
 
 def create_graph():
 
-    path = "C:\\Users\\darian\\PycharmProjects\\GANet\\BD\\LFRNetsTest\\"
+    path = "../data/BD/LFRNetsTest/"
     for file in os.listdir(path):        
         # Check whether file is in text format or not
         if file.endswith(".dat") or file.endswith(".paj"):
