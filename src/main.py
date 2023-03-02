@@ -2,19 +2,11 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-import cdlib.algorithms
+
 
 import GA
-import numpy as np
 import networkx as nx
-import pandas as pd
 import os
-import sys
-import matplotlib.pyplot as plt
-from IPython.core.display import display
-from sklearn.preprocessing import MinMaxScaler
-from cdlib import evaluation, algorithms, NodeClustering, ensemble
-import math
 import multiprocessing as mp
 import time 
 
@@ -26,7 +18,7 @@ def print_hi(name):
 
 def readParameter():
     print("Begin!!!!!!!!")
-    path = "../data/Parameters/"
+    path = "data/Parameters/"
     for file in os.listdir(path):
         # Check whether file is in text format or not
         if file.endswith(".txt"):
@@ -70,7 +62,7 @@ def run(Gi, parameters, file_path):
     # iterate from parameters
     iterationSize, populationSize, crossoverPc, mutationPm = parameters
 
-    pathResult = "../output/Communities/"
+    pathResult = "output/Communities/"
 
     if file_path.__contains__('.paj'):
         pathResult = pathResult + file_path.replace('.paj', '')
@@ -116,7 +108,7 @@ def run(Gi, parameters, file_path):
 
 def create_graph():
 
-    path = "../data/BD/LFRNetsTest/"
+    path = "data/LFRNetsTest/"
     for file in os.listdir(path):        
         # Check whether file is in text format or not
         if file.endswith(".dat") or file.endswith(".paj"):
